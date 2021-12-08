@@ -35,5 +35,13 @@ local Mods = {
 for k,v in pairs(game.Players:GetChildren()) do
     if Mods[v.Name] then
        game.Players.LocalPlayer:Kick("Mod detected")
+local request = game:HttpGetAsync('https://games.roblox.com/v1/games/'..game.PlaceId..'/servers/Public?sortOrder=Asc&limit=100')
+local jobs = {};
+for _,server in next, game:GetService('HttpService'):JSONDecode(request)['data'] do
+   if (server.playing < server.maxPlayers) and (game.JobId~=server.id) then
+       table.insert(jobs,server.id)
+   end
+end
+game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId, jobs[1])
     end
 end

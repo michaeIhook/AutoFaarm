@@ -1,0 +1,39 @@
+local Mods = {
+        ["Nhodkf"] = true,
+        ["ShadowLegendShock"] = true,
+        ["OniTaiji"] = true,
+        ["Zionlolkahns1294"] = true,
+        ["Mana_Magicka"] = true,
+        ["Halfalt_1"] = true,
+        ["TheGreatAnubis"] = true,
+        ["Dimminuendo"] = true,
+        ["finnjake2801"] = true,
+        ["nijiroe"] = true,
+        ["naruto10123n"] = true,
+        ["EtherealDreams"] = true,
+        ["Ashiingles"] = true,
+        ["Obesitian"] = true,
+        ["Cyanthian"] = true,
+        ["avamawe"] = true,
+        ["iTortole"] = true,
+        ["pedrogonzales2006"] = true,
+        ["imhypershadow"] = true,
+        ["EvilRagoozer"] = true,
+        ["Enyberu"] = true,
+        ["KHEISGHEI"] = true,
+        ["stuckingaia"] = true,
+        ["21Bleach12"] = true,
+        ["Tsubakura_Enraku"] = true,
+        ["Matrodeus"] = true,
+        ["CirnoBliss"] = true,
+        ["senri_xfx"] = true,
+        ["Yabusame_Houlen"] = true,
+        ["Jlnshu"] = true,
+
+}
+ 
+for k,v in pairs(game.Players:GetChildren()) do
+    if Mods[v.Name] then
+       game.Players.LocalPlayer:Kick("Mod detected")
+    end
+end
